@@ -5,15 +5,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Instagram, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Hero Section */}
-      <section
-        className="relative flex flex-col items-center justify-center text-center min-h-screen w-full px-6 overflow-hidden bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url('/logo/logo.jpg')" }} // <-- replace with your image
-      >
+      <section className="relative flex flex-col items-center justify-center text-center min-h-screen w-full overflow-hidden bg-black">
+        {/* Background Image */}
+        <Image
+          src="/logo/logo.jpg"
+          alt="Racing background"
+          fill
+          priority
+          sizes="100vw"
+          className="md:object-cover object-contain"
+        />
         {/* Overlay / Tint */}
         <div className="absolute inset-0 bg-black/90" />
 
