@@ -2,8 +2,21 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Instagram, DollarSign, Users } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import {
+  Mail,
+  Instagram,
+  DollarSign,
+  Users,
+  ArrowRightLeftIcon,
+  ArrowRightIcon,
+  ArrowRight,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,7 +27,7 @@ export default function Home() {
       <section className="relative flex flex-col items-center justify-center text-center min-h-screen w-full overflow-hidden bg-black">
         {/* Background Image */}
         <Image
-          src="/logo/logo.jpg"
+          src="/sponsor/racetrack.png"
           alt="Racing background"
           fill
           priority
@@ -23,6 +36,21 @@ export default function Home() {
         />
         {/* Overlay / Tint */}
         <div className="absolute inset-0 bg-black/90" />
+
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 rounded-full overflow-clip w-32 h-32 items-center justify-center flex"
+        >
+          <Image
+            alt="logo"
+            width={100}
+            height={100}
+            src="/logo/logo.png"
+            className="w-full h-full font-extrabold text-racing-red drop-shadow-lg"
+          />
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -41,8 +69,7 @@ export default function Home() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-6 max-w-2xl text-lg text-gray-200 relative z-10 drop-shadow-md"
         >
-          Introducing University of Cincinnati students to racing with track
-          opportunities, community, and speed.
+          A Motorsport Team in the Collegiate Racing Series‌ ©
         </motion.p>
 
         <motion.div
@@ -61,7 +88,9 @@ export default function Home() {
           </Button>
           <Button asChild variant="outline">
             <Link
-              href={"#"}
+              rel="noreferrer"
+              target="_blank"
+              href="/sponsor/sponsor-packet.pdf"
               className="border-racing-red text-racing-red px-6 py-3 rounded-2xl text-lg bg-white/10 hover:bg-white/20 shadow-lg"
             >
               Learn More
@@ -71,61 +100,175 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-24 px-6 bg-white text-black">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-racing-red mb-6">About Us</h2>
+      <section className="py-12 px-12 bg-white text-black flex flex-col md:flex-row items-center justify-evenly">
+        <div className="max-w-5xl text-left">
+          <h2 className="text-4xl font-bold text-racing-red mb-6">
+            A shared drive to win no matter what.‌
+          </h2>
           <p className="text-lg text-gray-700">
-            Queen City Racing is a student organization at the University of
-            Cincinnati passionate about motorsports. We provide students with
-            unique opportunities to experience track days, connect with fellow
-            racing enthusiasts, and build lifelong skills in teamwork,
-            mechanics, and leadership.
+            <span className="font-bold">Queen City Racing (QCR)</span> is a
+            student-led, 501(c)(3) non-profit motorsports team competing in the
+            Collegiate Racing Series, which provides students with hands-on
+            opportunities in team management, marketing, sponsorship, and
+            wheel-to-wheel racing. Queen City Racing is open to all majors —
+            from engineers, business students, medical students, and DAAP
+            students.‌
           </p>
         </div>
+        <Image
+          alt="crs logo"
+          priority
+          width={300}
+          height={300}
+          src="/logo/crs_logo.png"
+        />
       </section>
 
       {/* Sponsors & Donate Section */}
       <section className="py-24 px-6 bg-black text-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-racing-red mb-12">
+          <h2 className="text-4xl md:text-7xl font-bold text-racing-red mb-12">
             Support Our Mission
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gray-900 border border-racing-red rounded-2xl shadow-lg">
-              <CardContent className="p-8">
-                <Users className="mx-auto text-racing-red w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  Become a Sponsor
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  Help us grow by partnering with Queen City Racing. Your
-                  support provides students with access to tracks, equipment,
-                  and unforgettable racing experiences.
-                </p>
-                <Button className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg">
-                  Sponsor Us
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-900 border border-racing-red rounded-2xl shadow-lg">
-              <CardContent className="p-8">
-                <DollarSign className="mx-auto text-racing-red w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  Make a Donation
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  Every contribution fuels our mission to introduce students to
-                  the world of motorsports. Donations go directly toward track
-                  opportunities and racing resources.
-                </p>
-                <Button className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg">
-                  Donate Now
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid flex-row md:grid-cols-4 gap-6">
+            <SponsorCard
+              image="/sponsor/copper.png"
+              title="COPPER"
+              price="$100-$499"
+              tags={["THE SPARK THAT POWERS EVERYTHING.‌"]}
+              description="Copper Tier gets the car on the track, started, and builds the foundation of the club.‌"
+              included={["Coasters", "Team Photo", "Name on the Car"]}
+              border
+            />
+            <SponsorCard
+              image="/sponsor/aluminum.png"
+              title="ALUMINIUM‌"
+              price="$500-$999‌"
+              tags={["LIGHTWEIGHT SPEED,", "BUILT TO FLY.‌"]}
+              description="Aluminum makes the necessary changes to the car and keeps it running fast.‌"
+              included={[
+                "Copper Tier",
+                "T-Shirts",
+                "Small Logo",
+                "3D Printed Merchandise",
+              ]}
+              border
+            />
+            <SponsorCard
+              image="/sponsor/titanium.png"
+              title="TITANIUM"
+              price="$100-$499"
+              tags={["RAW STRENGTH,", "ENGINEER‌ED‌ TO DOMINATE.‌"]}
+              description="Titanium is making significant upgrades to the car and getting practice time to make a formidable team.‌"
+              included={[
+                "Aluminum Tier",
+                "Hoodies",
+                "Event Tickets",
+                "Medium Logo",
+              ]}
+              border
+            />
+            <SponsorCard
+              image="/sponsor/carbon.png"
+              title="CARBON"
+              price="$5000+"
+              tags={["ELITE PERFORMANC‌E.‌", "NO COMPROMISES.‌"]}
+              description="Building the winning team with the best upgrades to the car. This tier grants access to the resources necessary to dominate.‌"
+              included={[
+                "Titanium Tier",
+                "Plaque",
+                "Signed Helmet",
+                "Large Priority Placement Logo",
+              ]}
+              border={false}
+            />
           </div>
         </div>
+
+        {/* Hero Section */}
+        <section className="relative flex flex-col min-h-screen w-full overflow-hidden bg-black pt-2 items-center justify-center">
+          {/* Background Image */}
+          <Image
+            src="/sponsor/finish-line.png"
+            alt="race track"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Overlay / Tint */}
+          <div className="absolute inset-0 bg-black/85" />
+
+          <div className="flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative z-10"
+            >
+              <h1 className="text-5xl md:text-7xl font-extrabold drop-shadow-lg">
+                TOP BIDDER EXCLUSIVES
+              </h1>
+            </motion.div>
+
+            <div className="flex flex-col items-center justify-center w-full h-full grow text-left pt-10">
+              <div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="mt-3 max-w-2xl text-2xl text-gray-200 relative z-10 drop-shadow-md"
+                >
+                  LOGO ON TEAM RACING SUIT
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="mt-3 max-w-2xl text-2xl text-gray-200 relative z-10 drop-shadow-md"
+                >
+                  YOUR OWN RACING SUIT
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  className="mt-3 max-w-2xl text-2xl text-gray-200 relative z-10 drop-shadow-md"
+                >
+                  CAR NAMING RIGHTS
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                  className="mt-3 max-w-2xl text-2xl text-gray-200 relative z-10 drop-shadow-md"
+                >
+                  TRACK DAY IN QCR's RACECAR
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className="mt-8 flex items-center gap-4 relative z-10"
+                >
+                  <p className="text-xl font-bold">LET'S GO FOR A DRIVE</p>
+                  <Button asChild>
+                    <Link
+                      href="#"
+                      className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-2xl shadow-lg"
+                    >
+                      Sponsor
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       {/* Contact Section */}
@@ -163,6 +306,62 @@ export default function Home() {
           Cincinnati
         </p>
       </footer>
+    </div>
+  );
+}
+
+function SponsorCard({
+  image,
+  title,
+  price,
+  tags,
+  description,
+  included,
+  border = false,
+}: {
+  image: string;
+  title: string;
+  price: string;
+  tags: string[];
+  description: string;
+  included: string[];
+  border: boolean;
+}) {
+  return (
+    <div
+      className={`w-full h-full pb-6 md:pr-6  ${border ? "border-b-4 md:border-b-0 border-b-racing-red md:border-r-4 md:border-r-racing-red" : ""}`}
+    >
+      <Card className="w-full h-full bg-back/70 text-white border-none py-0 px-0">
+        <CardHeader className="text-left px-0">
+          <Image
+            className="w-full"
+            alt="copper wires"
+            width={300}
+            height={300}
+            src={image}
+          />
+          <p className="text-3xl font-extrabold italic">{title}</p>
+          <p className="text-2xl font-bold">{price}</p>
+          <div>
+            {tags.map((tag) => {
+              return <p className="text-lg text-slate-300">{tag}</p>;
+            })}
+          </div>
+        </CardHeader>
+
+        <CardContent className="text-left px-0">
+          <p>{description}</p>
+        </CardContent>
+
+        <CardFooter className="flex flex-col items-start text-left px-0 h-full">
+          <p className="font-bold text-left">WHAT’S INCLUDED:‌</p>
+          <ul>
+            {included.map((line, idx) => {
+              return <li key={idx}>- {line}</li>;
+            })}
+          </ul>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
