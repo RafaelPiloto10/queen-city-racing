@@ -8,15 +8,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import {
-  Mail,
-  Instagram,
-  DollarSign,
-  Users,
-  ArrowRightLeftIcon,
-  ArrowRightIcon,
-  ArrowRight,
-} from "lucide-react";
+import { Mail, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -246,7 +238,7 @@ export default function Home() {
                   transition={{ delay: 0.6, duration: 0.6 }}
                   className="mt-3 max-w-2xl text-2xl text-gray-200 relative z-10 drop-shadow-md"
                 >
-                  TRACK DAY IN QCR's RACECAR
+                  TRACK DAY IN QCR&apos;s RACECAR
                 </motion.p>
 
                 <motion.div
@@ -255,7 +247,7 @@ export default function Home() {
                   transition={{ delay: 0.8, duration: 0.6 }}
                   className="mt-8 flex items-center gap-4 relative z-10"
                 >
-                  <p className="text-xl font-bold">LET'S GO FOR A DRIVE</p>
+                  <p className="text-xl font-bold">LET&apos;S GO FOR A DRIVE</p>
                   <Button asChild>
                     <Link
                       href="#"
@@ -343,8 +335,12 @@ function SponsorCard({
           <p className="text-3xl font-extrabold italic">{title}</p>
           <p className="text-2xl font-bold">{price}</p>
           <div>
-            {tags.map((tag) => {
-              return <p className="text-lg text-slate-300">{tag}</p>;
+            {tags.map((tag, idx) => {
+              return (
+                <p key={idx} className="text-lg text-slate-300">
+                  {tag}
+                </p>
+              );
             })}
           </div>
         </CardHeader>
