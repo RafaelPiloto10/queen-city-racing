@@ -136,7 +136,7 @@ export default function Home() {
             <SponsorCard
               image="/sponsor/copper.png"
               title="COPPER"
-              price="$100-$499"
+              price="$490"
               tags={["THE SPARK THAT POWERS EVERYTHING.‌"]}
               description="Copper Tier gets the car on the track, started, and builds the foundation of the club.‌"
               included={["Coasters", "Team Photo", "Name on the Car"]}
@@ -145,7 +145,7 @@ export default function Home() {
             <SponsorCard
               image="/sponsor/aluminum.png"
               title="ALUMINIUM‌"
-              price="$500-$999‌"
+              price="$990"
               tags={["LIGHTWEIGHT SPEED,", "BUILT TO FLY.‌"]}
               description="Aluminum makes the necessary changes to the car and keeps it running fast.‌"
               included={[
@@ -159,7 +159,7 @@ export default function Home() {
             <SponsorCard
               image="/sponsor/titanium.png"
               title="TITANIUM"
-              price="$1,000-$4,999"
+              price="$4,990"
               tags={["RAW STRENGTH,", "ENGINEER‌ED‌ TO DOMINATE.‌"]}
               description="Titanium is making significant upgrades to the car and getting practice time to make a formidable team.‌"
               included={[
@@ -173,7 +173,7 @@ export default function Home() {
             <SponsorCard
               image="/sponsor/carbon.png"
               title="CARBON"
-              price="$5,000+"
+              price="$7,000"
               tags={["ELITE PERFORMANC‌E.‌", "NO COMPROMISES.‌"]}
               description="Building the winning team with the best upgrades to the car. This tier grants access to the resources necessary to dominate.‌"
               included={[
