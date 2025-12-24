@@ -76,7 +76,16 @@ export default function Home() {
               className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg shadow-lg"
               target="_blank"
             >
-              Join Us
+              Students Join Us
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link
+              href="#"
+              className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg shadow-lg"
+              target="_blank"
+            >
+              Sponsors Contact Us
             </Link>
           </Button>
           <Button asChild variant="outline">
