@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Mail, Instagram } from "lucide-react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -72,8 +72,9 @@ export default function Home() {
         >
           <Button asChild>
             <Link
-              href="#"
+              href="https://groupme.com/join_group/112081853/NOIxf7pt"
               className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-lg shadow-lg"
+              target="_blank"
             >
               Join Us
             </Link>
@@ -250,8 +251,9 @@ export default function Home() {
                   <p className="text-xl font-bold">LET&apos;S GO FOR A DRIVE</p>
                   <Button asChild>
                     <Link
-                      href="#"
+                      href="https://www.zeffy.com/en-US/ticketing/queen-city-racing-sponsorships"
                       className="bg-racing-red hover:bg-red-700 text-white px-6 py-3 rounded-2xl text-2xl shadow-lg"
+                      target="_blank"
                     >
                       Sponsor
                     </Link>
@@ -274,7 +276,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-6">
             <a
-              href="mailto:queencityracing@uc.edu"
+              href="mailto:cincinnatiracing@gmail.com"
               className="text-racing-red hover:text-red-700"
             >
               <Mail className="w-8 h-8" />
@@ -286,6 +288,13 @@ export default function Home() {
               className="text-racing-red hover:text-red-700"
             >
               <Instagram className="w-8 h-8" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/queencityracing"
+              className="text-racing-red hover:text-red-700"
+              target="_blank"
+            >
+              <Linkedin className="w-8 h-8" />
             </a>
           </div>
         </div>
