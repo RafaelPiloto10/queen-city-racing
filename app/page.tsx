@@ -50,7 +50,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-racing-red drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-racing-red drop-shadow-lg px-4">
             Queen City Racing
           </h1>
         </motion.div>
@@ -59,7 +59,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-6 max-w-2xl text-lg text-gray-200 relative z-10 drop-shadow-md"
+          className="mt-6 max-w-2xl text-lg text-gray-200 relative z-10 drop-shadow-md px-4 text-pretty"
         >
           A Motorsport Team in the Collegiate Racing Series‌ ©
         </motion.p>
@@ -68,7 +68,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="mt-8 flex gap-4 relative z-10"
+          className="mt-8 flex md:flex-row flex-col gap-4 relative z-10"
         >
           <Button asChild>
             <Link
